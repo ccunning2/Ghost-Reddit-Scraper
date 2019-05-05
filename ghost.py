@@ -1,15 +1,17 @@
 import praw
 import sqlite3
 import datetime
+import os
 
 # praw = python reddit api wrapper.
 # You need a client id and secret, user agent can be anything
-CLIENT_ID = 'replace with your own'
+#Sert these environment variables in your bashrc or bash_profile
+CLIENT_ID = os.environ['CLIENT_ID']
 
-CLIENT_SECRET = 'replace with your own'
+CLIENT_SECRET = os.environ['CLIENT_SECRET']
 
 # path to sqlite3 db
-DB_PATH = "replace with your own"
+DB_PATH = os.environ['DB_PATH']
 
 
 def scrapeSubreddit(reddit, subreddit_name, db, cursor):
