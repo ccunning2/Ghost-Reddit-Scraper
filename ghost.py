@@ -14,6 +14,37 @@ CLIENT_SECRET = os.environ['CLIENT_SECRET']
 DB_PATH = os.environ['DB_PATH']
 
 
+#The subreddits to scrape
+SUBREDDITS = ['politics'
+,'pcmasterrace'
+,'android'
+,'apple'
+,'worldpolitics'
+,'MachineLearning'
+,'geek'
+,'LateStageCapitalism'
+,'linux'
+,'Cyberpunk'
+,'tech'
+,'tech'
+,'Anarchism'
+,'DataHoarder'
+,'DataScience'
+,'Anarcho_Capitalism'
+,'lostgeneration'
+,'BasicIncome'
+,'kotakuinaction'
+,'lewronggeneration'
+,'androidwear'
+,'samsung'
+,'KeepOurNetFree'
+,'HelloInternet'
+,'neoliberal'
+,'CapitalismVSocialism'
+]
+
+
+
 def scrapeSubreddit(reddit, subreddit_name, db, cursor):
     subreddit = reddit.subreddit(subreddit_name)
     post_query = f"INSERT INTO {subreddit_name.upper()}_POSTS(TITLE, URL, AUTHOR, SCORE, PERMALINK, NUM_COMMENTS) VALUES (?,?,?,?,?,?)"
